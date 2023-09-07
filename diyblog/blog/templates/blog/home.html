@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        {% block content %}
+            <h1>Blog Posts</h1>
+            <p>
+            Welcome To Blog Posts Website<br>A Website Developed By
+            <em>Ezz</em>!
+            </p>
+            <p>There Are {{num_posts}} Blogs And {{num_authors}} Authors</p>
+        {% endblock %}
+    </body>
+</html>

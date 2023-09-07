@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="" method="POST" style="margin: 40px ;">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Submit">
+    </form>
+    {% if form.errors %}
+    <div class="alert alert-danger my-5">
+        {{form.errors.as_text}}
+    </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Blogger: {{blogger.user}}</h1>
+    <h3>Bio</h3>
+    <p>{{blogger.bio}}</p>
+    <h3>Blogs List</h3>
+    <ul>
+        {% for blog in blog_list %}
+            <li>
+                <a href="{% url 'blog-detail' blog.pk %}">{{blog.blog_name}}</a> ({{blog.post_date}})
+            </li>
+        {% empty %}
+            <p>This blogger hasn't posted anything yet.</p>
+        {% endfor  %}
+    </ul>
+{% endblock %}
